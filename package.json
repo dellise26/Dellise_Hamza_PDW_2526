@@ -85,4 +85,8 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
+  ,
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }
