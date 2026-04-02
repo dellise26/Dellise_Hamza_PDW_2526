@@ -12,9 +12,12 @@ async function bootstrap() {
   app.useGlobalFilters(new HttpExceptionFilter());
 
   // Activation de la validation globale avec notre exception personnalisée [cite: 345]
-  app.useGlobalPipes(new ValidationPipe({
-    exceptionFactory: (validationErrors) => new ValidationException(validationErrors)
-  }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      exceptionFactory: (validationErrors) =>
+        new ValidationException(validationErrors),
+    }),
+  );
 
   swaggerConfiguration.config(app);
 
