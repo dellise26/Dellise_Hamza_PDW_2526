@@ -2,6 +2,7 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigKey, configMinimalKeys } from '@common/config/enum';
 import { Person } from 'model/person.entity';
 import { Car } from 'model/car.entity';
+import { Token, Credential } from 'security/model/entity/index';
 
 require('dotenv').config();
 
@@ -21,7 +22,7 @@ class ConfigManager {
       username: this.getValue(ConfigKey.DB_USER),
       password: this.getValue(ConfigKey.DB_PASSWORD),
       database: this.getValue(ConfigKey.DB_DATABASE),
-      entities: [Person, Car],
+      entities: [Person, Car, Token, Credential],
       synchronize: this.getValue(ConfigKey.DB_SYNC) === 'true',
     };
   }

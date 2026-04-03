@@ -1,4 +1,11 @@
 export enum ApiCodeResponse {
   TEST = 'api.result.test',
-  PAYLOAD_IS_NOT_VALID = 'api.result.payload_is_not_valid', // Ajouté lors de la partie validation [cite: 347, 348]
+  PAYLOAD_IS_NOT_VALID = 'api.result.payload_is_not_valid',
+  NO_TOKEN_FOUNDED = "NO_TOKEN_FOUNDED",
+  USER_NOT_FOUND = "USER_NOT_FOUND",
+  TOKEN_EXPIRED = "TOKEN_EXPIRED",
+  SIGNUP_ERROR = "SIGNUP_ERROR",
+  CREDENTIAL_DELETE_ERROR = "CREDENTIAL_DELETE_ERROR",
+  USER_ALREADY_EXIST = "USER_ALREADY_EXIST",
+  TOKEN_GEN_ERROR = "TOKEN_GEN_ERROR",
 }
