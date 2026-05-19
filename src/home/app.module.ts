@@ -5,14 +5,24 @@ import { AccountModule } from '../account/account.module';
 import { MemberModule } from '../member/member.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configManager } from '@common/config/config.manager';
+import { APP_GUARD } from '@nestjs/core';
+import { JwtGuard } from '@security/jwt';
+import { SecurityModule } from '../security/security.module';
 
 @Module({
   imports: [
+    TypeOrmModule.forRoot(configManager.getTypeOrmConfig()),
+    SecurityModule,
     AccountModule,
     MemberModule,
-    TypeOrmModule.forRoot(configManager.getTypeOrmConfig()),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: JwtGuard,
+    },
+  ],
 })
 export class AppModule {}

@@ -4,20 +4,21 @@ import { AppModule } from './home/app.module';
 import { ValidationException } from '@common/api';
 import { HttpExceptionFilter } from '@common/config';
 import { swaggerConfiguration } from '@common/documentation';
+import { ApiInterceptor } from '@common/api';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  // Activation du filtre global [cite: 333]
   app.useGlobalFilters(new HttpExceptionFilter());
 
-  // Activation de la validation globale avec notre exception personnalisée [cite: 345]
   app.useGlobalPipes(
     new ValidationPipe({
       exceptionFactory: (validationErrors) =>
         new ValidationException(validationErrors),
     }),
   );
+
+  app.useGlobalInterceptors(new ApiInterceptor());
 
   swaggerConfiguration.config(app);
 

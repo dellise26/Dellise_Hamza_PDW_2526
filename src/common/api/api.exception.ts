@@ -15,16 +15,15 @@ export class ApiException extends HttpException {
   }
 }
 
-// Exception spécifique pour la validation des données (payloads) [cite: 347, 348]
 export class ValidationException extends HttpException {
   constructor(errors: ValidationError[]) {
     super(
       {
         code: ApiCodeResponse.PAYLOAD_IS_NOT_VALID,
-        data: errors,
+        data: errors.map((e) => Object.values(e.constraints ?? {})).flat(),
         result: false,
       },
       400,
-    ); // Le document mentionne initialement 499 pour le test [cite: 347]
+    );
   }
 }
