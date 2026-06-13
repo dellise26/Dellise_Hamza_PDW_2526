@@ -9,4 +9,35 @@ export enum ApiCodeResponse {
   USER_ALREADY_EXIST = 'USER_ALREADY_EXIST',
   TOKEN_GEN_ERROR = 'TOKEN_GEN_ERROR',
   COMMON_SUCCESS = 'api.success.common',
+  
+  MEMBER_SUCCESS = 'api.success.member',
+  MEMBER_PLAN_SUCCESS = 'api.success.member_plan',
+
+  MEMBER_CREATE_ERROR = 'api.error.member.create',
+  MEMBER_DELETE_ERROR = 'api.error.member.delete',
+  MEMBER_NOT_FOUND = 'api.error.member.not_found',
+  MEMBER_LIST_ERROR = 'api.error.member.list',
+  MEMBER_UPDATE_ERROR = 'api.error.member.update',
+
+  MEMBER_PLAN_CREATE_ERROR = 'api.error.member_plan.create',
+  MEMBER_PLAN_DELETE_ERROR = 'api.error.member_plan.delete',
+  MEMBER_PLAN_NOT_FOUND = 'api.error.member_plan.not_found',
+  MEMBER_PLAN_LIST_ERROR = 'api.error.member_plan.list',
+  MEMBER_PLAN_UPDATE_ERROR = 'api.error.member_plan.update',
+
+  MEMBER_PAYLOAD_MEMBER_ID_MANDATORY = 'api.error.member.payload.member_id.mandatory',
+  MEMBER_PAYLOAD_MEMBER_ID_LENGTH_ERROR = 'api.error.member.payload.member_id.length',
+  MEMBER_PAYLOAD_FIRSTNAME_IS_NOT_STRING = 'api.error.member.payload.firstname.not_string',
+  MEMBER_PAYLOAD_FIRSTNAME_LENGTH_ERROR = 'api.error.member.payload.firstname.length',
+  MEMBER_PAYLOAD_LASTNAME_IS_NOT_STRING = 'api.error.member.payload.lastname.not_string',
+  MEMBER_PAYLOAD_LASTNAME_LENGTH_ERROR = 'api.error.member.payload.lastname.length',
+  MEMBER_PAYLOAD_BIRTHDATE_IS_NOT_VALID = 'api.error.member.payload.birthdate.not_valid',
+  MEMBER_PAYLOAD_GENDER_IS_NOT_VALID = 'api.error.member.payload.gender.not_valid',
+  MEMBER_PAYLOAD_MAIL_IS_NOT_VALID = 'api.error.member.payload.mail.not_valid',
+  MEMBER_PAYLOAD_MAIL_LENGTH_ERROR = 'api.error.member.payload.mail.length',
+  MEMBER_PAYLOAD_PHONE_LENGTH_ERROR = 'api.error.member.payload.phone.length',
+  MEMBER_PAYLOAD_IBAN_LENGTH_ERROR = 'api.error.member.payload.iban.length',
+  MEMBER_PAYLOAD_ACTIVATION_CODE_LENGTH_ERROR = 'api.error.member.payload.code_activation.length',
+  MEMBER_PAYLOAD_SUBSCRIPTION_NOT_VALID = 'api.error.member.payload.subscriptions.not_valid',
+  MEMBER_PAYLOAD_ACTIVE_INVALID = 'api.error.member.payload.active.not_valid'
 }
