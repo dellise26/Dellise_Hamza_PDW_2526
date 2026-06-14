@@ -1,0 +1,64 @@
+.signin-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    label {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+        border-color: #3996d2;
+        box-shadow: 0 0 5px rgba(57, 150, 210, 0.3);
+      }
+    }
+  }
+
+  .error {
+    color: #d32f2f;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3996d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover:not(:disabled) {
+      background-color: #2e7aa8;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+}

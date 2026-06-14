@@ -1,1 +1,33 @@
-<p>sign-in-page works!</p>
+<div class="signin-container">
+  <h1>Connexion</h1>
+  
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Identifiant</label>
+      <input 
+        type="text" 
+        formControlName="username" 
+        placeholder="Entrez votre identifiant"
+      >
+      <span *ngIf="hasError('username', 'required')" class="error">
+        L'identifiant est requis
+      </span>
+    </div>
+
+    <div class="form-group">
+      <label>Mot de passe</label>
+      <input 
+        type="password" 
+        formControlName="password" 
+        placeholder="Entrez votre mot de passe"
+      >
+      <span *ngIf="hasError('password', 'required')" class="error">
+        Le mot de passe est requis
+      </span>
+    </div>
+
+    <button type="submit" [disabled]="!formGroup.valid">
+      Se connecter
+    </button>
+  </form>
+</div>
