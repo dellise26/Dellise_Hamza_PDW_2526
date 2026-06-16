@@ -12,9 +12,10 @@ import {
   MemberPlanNotFoundException,
   MemberPlanUpdateException
 } from './member.exception';
+import {CrudService} from '@common/api';
 
 @Injectable()
-export class MemberPlanService{
+export class MemberPlanService implements CrudService<MemberPlan, MemberPlanCreatePayload, MemberPlanUpdatePayload, string> {
   constructor(@InjectRepository(MemberPlan) private readonly repository: Repository<MemberPlan>) { }
 
   async create(payload: MemberPlanCreatePayload): Promise<MemberPlan> {

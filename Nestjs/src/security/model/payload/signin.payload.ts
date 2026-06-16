@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsOptional, IsBoolean } from 'class-validator';
+import { IsNotEmpty, IsOptional } from 'class-validator';
 
 export class SignInPayload {
   @ApiProperty()
@@ -19,7 +19,5 @@ export class SignInPayload {
   facebookHash: string;
 
   @ApiProperty()
-  @IsBoolean()
-  @IsOptional()
   socialLogin: boolean;
 }

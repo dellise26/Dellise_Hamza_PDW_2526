@@ -1,0 +1,35 @@
+.input {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 12px 4px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.floating-input:focus {
+  border-bottom-color: var(--theme-primary);
+}
+
+.floating-label {
+  position: absolute;
+  top: 12px;
+  left: 4px;
+  color: #999;
+  font-size: 16px;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.fixed-label {
+  top: -10px;
+  font-size: 12px;
+  color: var(--theme-primary);
+}

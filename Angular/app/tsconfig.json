@@ -13,11 +13,20 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
     "paths": {
-      "@security": ["./src/app/security/index.ts"],
-      "@dashboard": ["./src/app/dashboard/index.ts"],
-      "@shared": ["./src/app/shared/index.ts"],
-      "@root": ["./src/app/root/index.ts"]
+      "@shared/*": ["src/app/shared/*"],
+      "@shared": ["src/app/shared/index.ts"],
+      "@root/*": ["src/app/root/*"],
+      "@root": ["src/app/root/index.ts"],
+      "@security/*": ["src/app/security/*"],
+      "@security": ["src/app/security/index.ts"],
+      "@dashboard/*": ["src/app/dashboard/*"],
+      "@dashboard": ["src/app/dashboard/index.ts"],
+      "@member-feature": ["src/app/dashboard/feature/member/index.ts"],
+      "@api": ["src/app/shared/api/index.ts"],
+      "@env": ["src/environments/index.ts"]
     }
   },
   "angularCompilerOptions": {

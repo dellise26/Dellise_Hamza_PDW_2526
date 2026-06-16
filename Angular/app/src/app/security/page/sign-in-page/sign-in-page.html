@@ -1,33 +1,19 @@
-<div class="signin-container">
-  <h1>Connexion</h1>
-  
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label>Identifiant</label>
-      <input 
-        type="text" 
-        formControlName="username" 
-        placeholder="Entrez votre identifiant"
-      >
-      <span *ngIf="hasError('username', 'required')" class="error">
-        L'identifiant est requis
-      </span>
-    </div>
+<form>
+  <app-floating-label-input [label]="'Identifiant'" [control]="get('username')"></app-floating-label-input>
+  <app-floating-label-input [label]="'Mot de passe'" [control]="get('password')" [type]="'password'"></app-floating-label-input>
 
-    <div class="form-group">
-      <label>Mot de passe</label>
-      <input 
-        type="password" 
-        formControlName="password" 
-        placeholder="Entrez votre mot de passe"
-      >
-      <span *ngIf="hasError('password', 'required')" class="error">
-        Le mot de passe est requis
-      </span>
-    </div>
+  <p *ngIf="errors().length > 0">
+    <app-label-with-param [label]="'security-feature.sign-in-page.error.description'"
+                          [params]="{count: errors().length}"></app-label-with-param>
+  </p>
+  <p *ngFor="let error of errors()">
+    <app-label-with-param
+      [label]="'security-feature.sign-in-page.error.'+error.control+'-'+error.error"></app-label-with-param>
+  </p>
 
-    <button type="submit" [disabled]="!formGroup.valid">
-      Se connecter
-    </button>
-  </form>
-</div>
+  <p *ngIf="loginFailed()" class="auth-error">Identifiant ou mot de passe incorrect</p>
+
+  <button type="button" (click)="onSubmit()">Se connecter</button>
+
+  <a routerLink="/account/signup" class="signup-link">Pas encore de compte ? S'inscrire</a>
+</form>

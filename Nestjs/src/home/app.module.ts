@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AccountModule } from '../account/account.module';
 import { MemberModule } from '../member/member.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configManager } from '@common/config/config.manager';
@@ -13,7 +12,6 @@ import { SecurityModule } from '../security/security.module';
   imports: [
     TypeOrmModule.forRoot(configManager.getTypeOrmConfig()),
     SecurityModule,
-    AccountModule,
     MemberModule,
   ],
   controllers: [AppController],

@@ -1,0 +1,38 @@
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 360px;
+  margin: 60px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+p {
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #d33;
+}
+
+.auth-error {
+  color: #d33;
+  font-weight: 600;
+}
+
+button {
+  margin-top: 18px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: var(--theme-primary);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+button:hover {
+  background: var(--theme-primary-middle);
+}

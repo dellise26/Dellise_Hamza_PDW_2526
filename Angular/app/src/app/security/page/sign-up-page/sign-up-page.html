@@ -1,0 +1,18 @@
+<form>
+  <app-floating-label-input [label]="'Identifiant'" [control]="get('username')"></app-floating-label-input>
+  <app-floating-label-input [label]="'Mot de passe'" [control]="get('password')" [type]="'password'"></app-floating-label-input>
+  <app-floating-label-input [label]="'Email'" [control]="get('mail')"></app-floating-label-input>
+
+  <p *ngIf="errors().length > 0">
+    <app-label-with-param [label]="'security-feature.sign-in-page.error.description'"
+                          [params]="{count: errors().length}"></app-label-with-param>
+  </p>
+  <p *ngFor="let error of errors()">
+    <app-label-with-param
+      [label]="'security-feature.sign-in-page.error.'+error.control+'-'+error.error"></app-label-with-param>
+  </p>
+
+  <p *ngIf="signUpFailed()" class="auth-error">Cet identifiant ou cet email est déjà utilisé</p>
+
+  <button type="button" (click)="onSubmit()">S'inscrire</button>
+</form>

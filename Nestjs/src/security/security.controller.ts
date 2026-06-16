@@ -48,6 +48,11 @@ export class SecurityController {
     return user;
   }
 
+  @Post('logout')
+  public logout(@User() user: Credential) {
+    return this.service.logout(user);
+  }
+
   @Delete('delete/:id')
   public delete(@Param('id') id: string) {
     return this.service.delete(id);

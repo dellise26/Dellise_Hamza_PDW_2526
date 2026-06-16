@@ -1,1 +1,9 @@
-<p>dashboard-router works!</p>
+<ul>
+  <li><a routerLink="{{routes.AUTHENTICATED}}">Home</a></li>
+  <li><a routerLink="{{routes.MEMBER_DETAIL}}15">ID 15</a></li>
+  <li class="logout"><button type="button" (click)="logout()">Déconnexion</button></li>
+</ul>
+<p *ngIf="currentUser()">Connecté : {{currentUser().username}}</p>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

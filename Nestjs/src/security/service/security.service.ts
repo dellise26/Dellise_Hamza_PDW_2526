@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { isNil } from 'lodash';
@@ -12,19 +12,10 @@ import {
   SignupException,
   CredentialDeleteException,
 } from '../security.exception';
-
-const bcrypt = require('bcrypt');
-
-const encryptPassword = async (plaintext: string): Promise<string> =>
-  bcrypt.hash(plaintext, 10);
-
-const comparePassword = async (plaintext: string, hash: string): Promise<boolean> =>
-  bcrypt.compare(plaintext, hash);
+import { encryptPassword, comparePassword } from '../utils/password.decoder';
 
 @Injectable()
 export class SecurityService {
-  private readonly logger = new Logger(SecurityService.name);
-
   constructor(
     @InjectRepository(Credential)
     private readonly repository: Repository<Credential>,
@@ -81,13 +72,16 @@ export class SecurityService {
       } as SignInPayload;
       return this.signIn(signInPayload, false);
     } catch (e) {
-      this.logger.error('Signup failed', e);
       throw new SignupException();
     }
   }
 
   async refresh(payload: RefreshTokenPayload): Promise<Token | null> {
     return this.tokenService.refresh(payload);
+  }
+
+  async logout(credential: Credential): Promise<void> {
+    await this.tokenService.deleteFor(credential);
   }
 
   async delete(id: string): Promise<void> {

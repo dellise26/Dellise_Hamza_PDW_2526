@@ -1,0 +1,7 @@
+{
+  "security-feature.sign-in-page.label.username": "Identifiant",
+  "security-feature.sign-in-page.label.password": "Mot de passe",
+  "security-feature.sign-in-page.error.username-required": "L'identifiant' est requis",
+  "security-feature.sign-in-page.error.password-required": "Le Mot de passe est requis",
+  "security-feature.sign-in-page.error.description": "Vous avez {{count}} erreur(s)"
+}

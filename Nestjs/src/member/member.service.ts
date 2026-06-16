@@ -19,7 +19,6 @@ export class MemberService {
         .active(payload.active).code_activation(payload.code_activation).build());
       return await this.repository.save(newMember);
     } catch (e) {
-      console.error(e);
       throw new MemberCreateException();
     }
   }

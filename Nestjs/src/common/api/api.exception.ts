@@ -23,7 +23,7 @@ export class ValidationException extends HttpException {
         data: errors.map((e) => Object.values(e.constraints ?? {})).flat(),
         result: false,
       },
-      400,
+      499,
     );
   }
 }

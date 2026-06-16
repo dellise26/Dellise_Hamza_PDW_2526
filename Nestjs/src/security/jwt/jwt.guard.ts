@@ -52,7 +52,7 @@ export class JwtGuard implements CanActivate {
           }),
         );
       } catch (e) {
-        this.logger.error('Token validation failed', e);
+        this.logger.log(e.message);
         throw new TokenExpiredException();
       }
     }
