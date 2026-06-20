@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MemberModule } from '../member/member.module';
+import { DvdModule } from '../dvd/dvd.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configManager } from '@common/config/config.manager';
 import { APP_GUARD } from '@nestjs/core';
@@ -13,6 +14,7 @@ import { SecurityModule } from '../security/security.module';
     TypeOrmModule.forRoot(configManager.getTypeOrmConfig()),
     SecurityModule,
     MemberModule,
+    DvdModule,
   ],
   controllers: [AppController],
   providers: [

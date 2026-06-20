@@ -39,5 +39,13 @@ export enum ApiCodeResponse {
   MEMBER_PAYLOAD_IBAN_LENGTH_ERROR = 'api.error.member.payload.iban.length',
   MEMBER_PAYLOAD_ACTIVATION_CODE_LENGTH_ERROR = 'api.error.member.payload.code_activation.length',
   MEMBER_PAYLOAD_SUBSCRIPTION_NOT_VALID = 'api.error.member.payload.subscriptions.not_valid',
-  MEMBER_PAYLOAD_ACTIVE_INVALID = 'api.error.member.payload.active.not_valid'
+  MEMBER_PAYLOAD_ACTIVE_INVALID = 'api.error.member.payload.active.not_valid',
+
+  DVD_SUCCESS = 'api.success.dvd',
+
+  DVD_CREATE_ERROR = 'api.error.dvd.create',
+  DVD_DELETE_ERROR = 'api.error.dvd.delete',
+  DVD_NOT_FOUND = 'api.error.dvd.not_found',
+  DVD_LIST_ERROR = 'api.error.dvd.list',
+  DVD_UPDATE_ERROR = 'api.error.dvd.update'
 }

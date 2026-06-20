@@ -4,6 +4,7 @@ import { Person } from 'model/person.entity';
 import { Car } from 'model/car.entity';
 import { Token, Credential } from 'security/model/entity/index';
 import { Member, MemberPlan, MemberSubscription } from 'member/model/entity';
+import { Dvd } from 'dvd/model/entity';
 import { Address } from '@common/model';
 
 require('dotenv').config();
@@ -24,7 +25,7 @@ class ConfigManager {
       username: this.getValue(ConfigKey.DB_USER),
       password: this.getValue(ConfigKey.DB_PASSWORD),
       database: this.getValue(ConfigKey.DB_DATABASE),
-      entities: [Person, Car, Token, Credential, Member, MemberPlan, MemberSubscription, Address],
+      entities: [Person, Car, Token, Credential, Member, MemberPlan, MemberSubscription, Address, Dvd],
       synchronize: this.getValue(ConfigKey.DB_SYNC) === 'true',
     };
   }

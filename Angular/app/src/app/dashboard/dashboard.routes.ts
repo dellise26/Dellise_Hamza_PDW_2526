@@ -15,6 +15,11 @@ export const dashboardRoutes: Routes = [
         path: 'member',
         loadChildren: () => import('./feature/member/member.routes')
           .then(r => r.memberRoutes)
+      },
+      {
+        path: 'dvd',
+        loadChildren: () => import('./feature/dvd/dvd.routes')
+          .then(r => r.dvdRoutes)
       }
     ]
   }

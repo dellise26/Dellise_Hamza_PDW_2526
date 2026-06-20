@@ -1,0 +1,9 @@
+export enum DvdGenre {
+  ACTION = 'ACTION',
+  COMEDY = 'COMEDY',
+  DRAMA = 'DRAMA',
+  HORROR = 'HORROR',
+  SCIFI = 'SCIFI',
+  DOCUMENTARY = 'DOCUMENTARY',
+  OTHER = 'OTHER'
+}

@@ -1,0 +1,27 @@
+<form>
+  <h1>Nouveau DVD</h1>
+
+  <app-floating-label-input [label]="'Titre'" [control]="get('title')"></app-floating-label-input>
+  <app-floating-label-input [label]="'Réalisateur'" [control]="get('director')"></app-floating-label-input>
+  <app-floating-label-input [label]="'Description'" [control]="get('description')"></app-floating-label-input>
+
+  <label class="select-field">
+    <span>Genre</span>
+    <select [formControl]="get('genre')">
+      <option *ngFor="let g of genres" [value]="g">{{g}}</option>
+    </select>
+  </label>
+
+  <app-floating-label-input [label]="'Année'" [control]="get('releaseYear')" [type]="'number'"></app-floating-label-input>
+  <app-floating-label-input [label]="'Prix (€)'" [control]="get('price')" [type]="'number'"></app-floating-label-input>
+  <app-floating-label-input [label]="'Stock'" [control]="get('stock')" [type]="'number'"></app-floating-label-input>
+
+  <div *ngIf="errors().length > 0" class="errors">
+    <p *ngFor="let error of errors()">{{error.control}} — {{error.error}}</p>
+  </div>
+
+  <div class="buttons">
+    <button type="button" (click)="onSubmit()">Enregistrer</button>
+    <a routerLink="{{routes.DVD}}">Annuler</a>
+  </div>
+</form>

@@ -1,0 +1,11 @@
+<div class="dvd-detail" *ngIf="dvd() as d">
+  <h1>{{d.title}}</h1>
+  <p><strong>Réalisateur :</strong> {{d.director}}</p>
+  <p><strong>Genre :</strong> {{d.genre}}</p>
+  <p><strong>Année :</strong> {{d.releaseYear}}</p>
+  <p><strong>Prix :</strong> {{d.price}} €</p>
+  <p><strong>Stock :</strong> {{d.stock}}</p>
+  <p><strong>Description :</strong> {{d.description}}</p>
+
+  <a routerLink="{{routes.DVD}}">Retour à la liste</a>
+</div>

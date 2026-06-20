@@ -1,0 +1,34 @@
+<div class="dvd-list">
+  <div class="header">
+    <h1>DVD</h1>
+    <a routerLink="{{routes.DVD_CREATE}}" class="btn">+ Nouveau DVD</a>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Genre</th>
+        <th>Prix</th>
+        <th>Stock</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dvd of list()">
+        <td>{{dvd.title}}</td>
+        <td>{{dvd.genre}}</td>
+        <td>{{dvd.price}} €</td>
+        <td>{{dvd.stock}}</td>
+        <td class="actions">
+          <a routerLink="{{routes.DVD_DETAIL}}{{dvd.dvd_id}}">Détail</a>
+          <a routerLink="{{routes.DVD_EDIT}}{{dvd.dvd_id}}">Éditer</a>
+          <button type="button" (click)="remove(dvd.dvd_id)">Supprimer</button>
+        </td>
+      </tr>
+      <tr *ngIf="list().length === 0">
+        <td colspan="5">Aucun DVD pour le moment.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

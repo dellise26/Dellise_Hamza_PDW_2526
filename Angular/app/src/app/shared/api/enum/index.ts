@@ -4,5 +4,10 @@ export enum ApiURI {
   SIGN_UP = 'account/signup',
   ME = 'account/me',
   REFRESH_TOKEN = 'account/refresh',
-  LOGOUT = 'account/logout'
+  LOGOUT = 'account/logout',
+  DVD_LIST = 'dvd/list',
+  DVD_DETAIL = 'dvd/detail/',
+  DVD_CREATE = 'dvd/create',
+  DVD_UPDATE = 'dvd/update',
+  DVD_DELETE = 'dvd/delete/'
 }
